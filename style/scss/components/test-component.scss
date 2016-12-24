@@ -1,3 +1,10 @@
 .test-component{
-    color: black;
+    ul{
+    	padding-top: 20px;
+
+    	li{
+    		color: #333;
+    		font-size: 16px;
+    	}
+    }
 }
