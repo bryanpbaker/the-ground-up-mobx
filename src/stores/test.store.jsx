@@ -1,7 +1,13 @@
 import { observable } from 'mobx';
+import request from 'superagent';
 
 class TestStore {
-	@observable todos = ['buy milk', 'buy eggs', 'buy bread'];
+	@observable todos;
+
+	constructor() {
+		request.get('https://todo-api-bb.herokuapp.com/todos')
+			.then(todos => this.todos = todos.body )
+	}
 }
 
 var Store = window.store = new TestStore;
